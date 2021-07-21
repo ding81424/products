@@ -14,3 +14,6 @@ while True:
 print(products)
 
 #二維清單存取方法，例如： products[0][0]
+
+for p in products:
+	print(p[0], '的價格是', p[1])
