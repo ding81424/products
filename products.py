@@ -19,7 +19,8 @@ for p in products:
 
 
 
-with open('products.csv', 'w') as f: #r：讀取 w:寫入
+with open('products.csv', 'w', encoding = 'utf-8') as f: #r：讀取 w:寫入 #加入編碼格式
+	f.write('商品,價格\n') #寫入欄位名稱 
 	for p in products:
 		f.write(p[0] + ',' + p[1] + '\n')
 
