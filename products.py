@@ -1,13 +1,19 @@
-#讀取檔案
+import os #operating system
+
 products = []
-with open('products.csv', 'r', encoding = 'utf-8') as f:
-	for line in f:
-		if '商品,價格' in line:
-			continue    #跳到下一個迴
-		name, price = line.strip().split(',') 
-		#strip()先把\n去掉，再利用,作為分割的字元，並且分別存入name與price
-		products.append([name, price])
-print(products)
+if os.path.isfile('products.csv'): #檢查檔案在不在電腦中
+	print('Good!')
+	#讀取檔案
+	with open('products.csv', 'r', encoding = 'utf-8') as f:
+		for line in f:
+			if '商品,價格' in line:
+				continue    #跳到下一個迴
+			name, price = line.strip().split(',') 
+			#strip()先把\n去掉，再利用,作為分割的字元，並且分別存入name與price
+			products.append([name, price])
+	print(products)
+else:
+	print('Cannot fine the file!')
 
 #讓使用者輸入
 while True:
